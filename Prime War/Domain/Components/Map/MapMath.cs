@@ -13,11 +13,6 @@ namespace PrimeWarEngine.Domain.Components.Map
 
         public static Coordinates[] relativeAdjacents = {new Coordinates(1, 0), new Coordinates(1, -1), new Coordinates(0, -1),
                                                         new Coordinates(-1, 0), new Coordinates(-1, 1), new Coordinates(0, 1) };
-        public static Coordinates[] AbsoluteAdjacents(Coordinates startingPoint)
-        {
-            Coordinates[] adjacents =  
-            return new Coordinates[6] {relativeAdjacents[0]}
-        }
 
         public static List<Coordinates> RotateCoordinates(List<Coordinates> toRotate, bool clockwise, int numberOfTimes, Coordinates aboutPoint = default(Coordinates))
         {
