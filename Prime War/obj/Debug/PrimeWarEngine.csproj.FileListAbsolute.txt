@@ -1,7 +1,0 @@
-C:\Users\Ryan\Desktop\LFGDigital\Prime War\Prime War\obj\Debug\PrimeWarEngine.csproj.CoreCompileInputs.cache
-C:\Users\Ryan\Desktop\LFGDigital\Prime War\Prime War\obj\Debug\PrimeWarEngine.csprojAssemblyReference.cache
-C:\Users\Ryan\Desktop\LFGDigital\Prime War\Prime War\bin\Debug\PrimeWarEngine.exe.config
-C:\Users\Ryan\Desktop\LFGDigital\Prime War\Prime War\bin\Debug\PrimeWarEngine.exe
-C:\Users\Ryan\Desktop\LFGDigital\Prime War\Prime War\bin\Debug\PrimeWarEngine.pdb
-C:\Users\Ryan\Desktop\LFGDigital\Prime War\Prime War\obj\Debug\PrimeWarEngine.exe
-C:\Users\Ryan\Desktop\LFGDigital\Prime War\Prime War\obj\Debug\PrimeWarEngine.pdb
