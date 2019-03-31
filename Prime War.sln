@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeWarEngine", "Prime War\PrimeWarEngine.csproj", "{6B009F01-D5E8-4712-B433-3B5EB88A422D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeWarEngine.Tests", "PrimeWar.Tests\PrimeWarEngine.Tests.csproj", "{17160C8B-6184-4B23-B999-75E6F4D1E78B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B009F01-D5E8-4712-B433-3B5EB88A422D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B009F01-D5E8-4712-B433-3B5EB88A422D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B009F01-D5E8-4712-B433-3B5EB88A422D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B009F01-D5E8-4712-B433-3B5EB88A422D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17160C8B-6184-4B23-B999-75E6F4D1E78B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17160C8B-6184-4B23-B999-75E6F4D1E78B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17160C8B-6184-4B23-B999-75E6F4D1E78B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17160C8B-6184-4B23-B999-75E6F4D1E78B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2563BC88-7670-42FC-B1E6-9A4453B64BBD}
+	EndGlobalSection
+EndGlobal

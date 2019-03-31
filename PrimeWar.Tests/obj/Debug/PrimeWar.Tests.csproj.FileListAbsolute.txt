@@ -1,0 +1,18 @@
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\NUnit3.TestAdapter.pdb
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\nunit.engine.dll
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\nunit.engine.api.dll
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\PrimeWar.Tests.dll
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\PrimeWar.Tests.pdb
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\nunit.framework.dll
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\Prime War.exe
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\Prime War.pdb
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\Prime War.exe.config
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\nunit.framework.pdb
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\bin\Debug\nunit.framework.xml
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\obj\Debug\PrimeWar.Tests.csprojAssemblyReference.cache
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\obj\Debug\PrimeWar.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\obj\Debug\PrimeWar.Tests.csproj.CopyComplete
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\obj\Debug\PrimeWar.Tests.dll
+C:\Users\Ryan\Desktop\LFGDigital\Prime War\PrimeWar.Tests\obj\Debug\PrimeWar.Tests.pdb
