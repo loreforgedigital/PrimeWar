@@ -2,6 +2,7 @@
 *.suo
 *.user
 *.sln.docstates
+*.vs/Prime War/v15/.suo
 
 # Build results
 [Dd]ebug/
