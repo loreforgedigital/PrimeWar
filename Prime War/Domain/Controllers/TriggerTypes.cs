@@ -25,6 +25,7 @@
         AttackDeclared,
         AttackFailed,
         TargetEnteredHex,
-        TargetExitedHex
+        TargetExitedHex,
+        ActivationPhase
     }
 }

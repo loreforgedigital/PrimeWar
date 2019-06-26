@@ -23,9 +23,21 @@ namespace PrimeWarEngine.Domain.Components.Dice
             this.d12 = d12;
             this.guaranteedFaces = guranteed != null ? guranteed : new List<DieFaces>();
         }
+        public DieCode(Random random)
+        {
+            this.d4 = random.Next(0, 4);
+            this.d8 = random.Next(0, 4);
+            this.d12 = random.Next(0, 4);
+            guaranteedFaces = new List<DieFaces>();
+            int guaranteedLength = random.Next(-2, 4);
+            for (int i = 0; i < guaranteedLength; i++)
+            {
+                guaranteedFaces.Add((DieFaces)Enum.GetValues(typeof(DieFaces)).GetValue(random.Next(8)));
+            }
+        }
         public override string ToString()
         {
-            return d4 + "d4s," + d8 + "d8s," + d12 + "d12s";// + guaranteedFaces != null && guaranteedFaces.Count > 0 ? ", " + string.Join(", ",guaranteedFaces) : "";
+            return d4 + "d4s," + d8 + "d8s," + d12 + "d12s" + guaranteedFaces != null && guaranteedFaces.Count > 0 ? ", " + string.Join(", ",guaranteedFaces) : "";
         }
     }
 }
