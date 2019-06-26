@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleHelpers\ConsoleMapPrinter.cs" />
+    <Compile Include="ConsoleHelpers\ConsoleInputManager.cs" />
+    <Compile Include="ConsoleHelpers\ConsoleOptions.cs" />
     <Compile Include="Domain\Components\Abilities\AttackCode.cs" />
     <Compile Include="Domain\Components\Dice\D12.cs" />
     <Compile Include="Domain\Components\Dice\D4.cs" />
