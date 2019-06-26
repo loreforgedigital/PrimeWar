@@ -6,6 +6,49 @@ namespace PrimeWarEngine.Domain.Components.Map
 {
     public class MapMath
     { 
+        public static List<Coordinates> GetCoordinatesForScenarioMap()
+        {
+            List<Coordinates> MapCoords = new List<Coordinates>();
+            //central trapezoid
+            for (int r = 0; r < 9; r++)
+            {
+                for (int q = 0; q < 13; q++)
+                {
+                    MapCoords.Add(new Coordinates(q, r));
+                }
+            }
+            //top Right corner
+            List<Coordinates> topRight = new List<Coordinates>();
+            for(int r=-6; r<0; r++)
+            {
+                for(int q = 1; q<13; q++)
+                {
+                    if(q/2 >= Math.Abs(r))
+                    {
+                        topRight.Add(new Coordinates(q, r));
+                    }
+                }
+            }
+            //bottom Left Corner
+            var bottomLeft = MapMath.RotateCoordinates(topRight, true, 3, new Coordinates(6, 4));
+            MapCoords.AddRange(topRight);
+            MapCoords.AddRange(bottomLeft);
+            return MapCoords;
+        }
+        public static List<Coordinates> RandomUniqueValidCoordinates(int count)
+        {
+
+            var totalCoords = GetCoordinatesForScenarioMap();
+            var rand = new Random();
+            var randCoords = new List<Coordinates>();
+            for(int i =0; i < Math.Min(count, totalCoords.Count); i ++)
+            {
+                var coord =totalCoords[rand.Next(0, totalCoords.Count)];
+                totalCoords.Remove(coord);
+                randCoords.Add(coord);
+            }
+            return randCoords;
+        }
         public static int DistanceBetween(Coordinates a, Coordinates b)
         {
             return DistanceBetween(ConvertToCube(a), ConvertToCube(b));
@@ -34,7 +77,7 @@ namespace PrimeWarEngine.Domain.Components.Map
             }
             return cardinalSouth;
         }
-
+        
         public static List<Coordinates> GetShape(Shapes shape, int radius)
         {
             List<Coordinates> cardinal = CardinalHexDirectionToRadius(radius);

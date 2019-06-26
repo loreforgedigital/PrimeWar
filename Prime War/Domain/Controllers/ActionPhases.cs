@@ -1,6 +1,6 @@
 ﻿namespace PrimeWarEngine.Domain.Controllers
 {
-    public enum ActionPhases
+    public enum ActivationPhases
     {
         Start,
         SuperFast,

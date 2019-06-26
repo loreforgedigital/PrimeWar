@@ -13,7 +13,8 @@
 
         public override string ToString()
         {
-            return "Q:" + q + ", R:" + r;
+            return q + "," + r;
+            //return "Q:" + q + ", R:" + r;
         }
 
         public override bool Equals(object obj)
