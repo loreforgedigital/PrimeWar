@@ -21,7 +21,7 @@ namespace PrimeWar.Tests.Dice
                 DieFaces.Hit,
                 DieFaces.Hit,
                 DieFaces.Hit,
-                DieFaces.Shift,
+                DieFaces.Move,
                 DieFaces.Opportunity,
                 DieFaces.Support,
                 DieFaces.Vital};

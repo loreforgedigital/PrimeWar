@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Combat\SuccessControllerTests.cs" />
     <Compile Include="Combat\SuccessResultShould.cs" />
     <Compile Include="Dice\AttackShould.cs" />
     <Compile Include="Dice\D12ClassShould.cs" />

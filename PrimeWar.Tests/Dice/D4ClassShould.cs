@@ -16,7 +16,7 @@ namespace PrimeWar.Tests.Dice
         [Test]
         public void ReturnCorrectDieFaces()
         {
-            IEnumerable<DieFaces> correctFaces = new List<DieFaces>() { DieFaces.Hit, DieFaces.Hit, DieFaces.Shift, DieFaces.Opportunity };
+            IEnumerable<DieFaces> correctFaces = new List<DieFaces>() { DieFaces.Hit, DieFaces.Hit, DieFaces.Move, DieFaces.Opportunity };
             var sut = new D4();
             Assert.That(sut.totalFaces, Is.EquivalentTo(correctFaces));
         }

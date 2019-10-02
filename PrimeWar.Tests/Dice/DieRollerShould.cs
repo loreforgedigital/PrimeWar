@@ -20,7 +20,7 @@ namespace PrimeWar.Tests.Dice
         [Test]
         public void ReturnAllGuaranteedFacesWithRoll()
         {
-            List<DieFaces> guaranteed = new List<DieFaces>() {DieFaces.Support, DieFaces.Shift };
+            List<DieFaces> guaranteed = new List<DieFaces>() {DieFaces.Support, DieFaces.Move };
             DieCode dieCode = new DieCode(1, 2, 3, guaranteed);
             var sut = new DieRoller(dieCode);
             Assert.That(guaranteed, Is.SubsetOf(sut.Roll()));

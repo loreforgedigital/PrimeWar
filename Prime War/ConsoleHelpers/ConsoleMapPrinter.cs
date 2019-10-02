@@ -328,20 +328,14 @@ namespace PrimeWarEngine.ConsoleHelpers
             char terrainChar = ' ';
             switch(terrain)
             {
-                case FeatureType.Barricade:
+                case FeatureType.Cover:
                     terrainChar = '#';
                     break;
                 case FeatureType.HighGround:
                     terrainChar = '^';
                     break;
-                case FeatureType.Cover:
+                case FeatureType.Concealment:
                     terrainChar = '@';
-                    break;
-                case FeatureType.Suppression:
-                    terrainChar = '$';
-                    break;
-                case FeatureType.Miasma:
-                    terrainChar = '~';
                     break;
                 case FeatureType.Wall:
                     terrainChar = '%';

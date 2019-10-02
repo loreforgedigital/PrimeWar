@@ -2,7 +2,6 @@
 using System.Collections;
 using PrimeWarEngine.Domain.Components.Abilities;
 using PrimeWarEngine.Domain.Components.Map;
-using PrimeWarEngine.Domain.Components.Dice;
 using System.Linq;
 using System;
 
@@ -128,57 +127,6 @@ namespace PrimeWarEngine.Domain.Controllers
             var remainingSuccesses = attackSuccesses - defenseSuccesses;
             return remainingSuccesses.Successes + remainingSuccesses.VitalSuccesses;
         }
-    }
-
-    public class SuccessController
-    {
-        public IEnumerable<DieFaces> facesForEvaluation;
-        public IEnumerable<TargetController> allies;
-        public Hex originTargetHex;
-
-        public SuccessController(IEnumerable<DieFaces> faces, IEnumerable<TargetController> allyTargets, Hex originHex)
-        {
-            facesForEvaluation = faces;
-            allies = allyTargets;
-            originTargetHex = originHex;
-        }
-
-        public SuccessResult CalculateSuccess()
-        {
-            int successes = 0;
-            int vitalSuccesses = 0;
-            successes += facesForEvaluation.Count(f => f == DieFaces.Hit);
-            vitalSuccesses += facesForEvaluation.Count(f => f == DieFaces.Vital);
-            if (originTargetHex.terrain != FeatureType.None)
-            {
-                successes += facesForEvaluation.Count(f => f == DieFaces.Opportunity);
-                vitalSuccesses += facesForEvaluation.Count(f => f == DieFaces.OpportunityVital);
-            }
-            if (allies.Any(a => MapMath.DistanceBetween(a.Position, originTargetHex.coordinates) == 1))
-            {
-                successes += facesForEvaluation.Count(f => f == DieFaces.Support);
-                vitalSuccesses += facesForEvaluation.Count(f => f == DieFaces.SupportVital);
-            }
-            return new SuccessResult(successes, vitalSuccesses);
-        }
-    }
-    public struct SuccessResult
-    {
-        public int Successes { get; }
-        public int VitalSuccesses { get; }
-
-        public SuccessResult(int success, int vitals)
-        {
-            Successes = success;
-            VitalSuccesses = vitals;
-        }
-
-        public static SuccessResult operator -(SuccessResult attack, SuccessResult defense)
-        {
-            return new SuccessResult(
-                attack.Successes > defense.Successes ? attack.Successes - defense.Successes : 0,
-                attack.VitalSuccesses > defense.VitalSuccesses ? attack.VitalSuccesses - defense.VitalSuccesses : 0);
-        }            
     }
     public class SupportController
     {

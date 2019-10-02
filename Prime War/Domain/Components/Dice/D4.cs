@@ -6,7 +6,7 @@ namespace PrimeWarEngine.Domain.Components.Dice
     {
         public D4()
         {
-            this.totalFaces = new List<DieFaces>() { DieFaces.Hit, DieFaces.Hit, DieFaces.Shift, DieFaces.Opportunity };
+            this.totalFaces = new List<DieFaces>() { DieFaces.Hit, DieFaces.Hit, DieFaces.Move, DieFaces.Opportunity };
         }
         public override string ToString()
         {
