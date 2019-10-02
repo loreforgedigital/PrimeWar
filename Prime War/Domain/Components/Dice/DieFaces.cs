@@ -6,7 +6,7 @@
         Vital,
         Opportunity,
         Support,
-        Move,
+        Shift,
         OpportunityVital,
         SupportVital
     };

@@ -4,9 +4,10 @@
     {
         None,
         HighGround,
+        Barricade,
         Cover,
-        Concealment,
-        Waypoint,
+        Suppression,
+        Miasma,
         Wall
     }
 }
