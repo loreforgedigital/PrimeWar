@@ -11,8 +11,8 @@
     <ProjectGuid>{17160C8B-6184-4B23-B999-75E6F4D1E78B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PrimeWar.Tests</RootNamespace>
-    <AssemblyName>PrimeWar.Tests</AssemblyName>
+    <RootNamespace>PrimeWarEngine.Tests</RootNamespace>
+    <AssemblyName>PrimeWarEngine.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Combat\SuccessResultShould.cs" />
     <Compile Include="Dice\AttackShould.cs" />
     <Compile Include="Dice\D12ClassShould.cs" />
     <Compile Include="Dice\D4ClassShould.cs" />
