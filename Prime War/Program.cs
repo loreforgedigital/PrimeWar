@@ -15,28 +15,45 @@ namespace PrimeWarEngine
     {
         static void Main(string[] args)
         {
+            MovementTest();
+            
+          
+        }
+
+        static void MovementTest()
+        {
             Random random = new Random();
-            //ConsoleMapPrinter.printBlankBoard();
-            //Stack<Coordinates> targetPath = new Stack<Coordinates>();
-            //var totalCoordinates = MapMath.GetCoordinatesForScenarioMap();
-            //targetPath.Push(totalCoordinates[random.Next(0, totalCoordinates.Count)]);
-            //bool continueTravel = true;
-            //while (continueTravel)
-            //{
-            //    ConsoleMapPrinter.printBoardWithPath(targetPath);
-            //    Console.WriteLine("Continue your journey? Y/N");
-            //    string continueResponse = Console.ReadLine();
-            //    continueTravel = !(continueResponse.Contains("N") || continueResponse.Contains("n") ) ;
-            //    if(continueTravel)
-            //    {
-            //        var nextCoord = MapMath.relativeAdjacents[random.Next(0, 6)] + targetPath.Peek();
-            //        while(!totalCoordinates.Contains(nextCoord) || targetPath.Contains(nextCoord) || MapMath.relativeAdjacents.All(a => targetPath.Contains(a+targetPath.Peek())))
-            //        {
-            //            nextCoord = MapMath.relativeAdjacents[random.Next(0, 6)] + targetPath.Peek();
-            //        }
-            //        targetPath.Push(nextCoord);
-            //    }
-            //}
+            List<Coordinates> relativePath = new List<Coordinates>();
+            var totalCoordinates = MapMath.GetCoordinatesForScenarioMap();
+            TargetController testController = new TargetController();
+            testController.Position = totalCoordinates[random.Next(0, totalCoordinates.Count)];
+            ConsoleMapPrinter.printBoardWithTargets(new List<TargetController>(){ testController});
+            Stack<Coordinates> targetPath = new Stack<Coordinates>();
+            targetPath.Push(testController.Position);
+            bool continueTravel = true;
+            while (continueTravel)
+            {
+                ConsoleMapPrinter.printBoardWithPath(targetPath);
+                Console.WriteLine("Add to your path? Y/N");
+                string continueResponse = Console.ReadLine();
+                continueTravel = !(continueResponse.Contains("N") || continueResponse.Contains("n"));
+                if (continueTravel)
+                {
+                    var nextCoord = ConsoleOptions<Coordinates>.GetResponseToOptions(MapMath.relativeAdjacents.ToList(), MapMath.relativeAdjacentsReadable);
+                    relativePath.Add(nextCoord);
+                    targetPath.Push(nextCoord + targetPath.Peek());
+                }
+            }
+            MovementController mc = new MovementController();
+            mc.MoveAlongPath(testController, relativePath);
+            ConsoleMapPrinter.printBoardWithTargets(new List<TargetController>() { testController });
+            Console.ReadLine();
+
+        }
+        void AttackTest()
+        {
+            Random random = new Random();
+
             //Build relevant lists
             var randCoords = MapMath.RandomUniqueValidCoordinates(6);
             TargetController playerController = new TargetController(new Target("Player", 8), randCoords[0], new DieCode(random));
@@ -62,7 +79,7 @@ namespace PrimeWarEngine
             ConsoleMapPrinter.printBoardWithTargets(totalTargets);
 
             ////Display and choose
-            
+
             AttackCode selectedAttack = ConsoleOptions<AttackCode>.GetResponseToOptions(attacks);
 
             List<TargetController> targetsInRange = targets.Where(t => MapMath.DistanceBetween(t.Position, playerController.Position) <= selectedAttack.Range).ToList();
@@ -80,8 +97,6 @@ namespace PrimeWarEngine
             Console.WriteLine(string.Join(",", defenseroll));
 
             Console.Read();
-            
-          
         }
     }
 

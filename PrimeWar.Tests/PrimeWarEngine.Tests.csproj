@@ -62,6 +62,7 @@
     <Compile Include="Dice\DieRollerShould.cs" />
     <Compile Include="Map\MapMathShould.cs" />
     <Compile Include="Map\MovementActionShould.cs" />
+    <Compile Include="Movement\MovementControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

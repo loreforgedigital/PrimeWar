@@ -5,7 +5,7 @@ using System.Linq;
 namespace PrimeWarEngine.Domain.Components.Map
 {
     public class MapMath
-    { 
+    {
         public static List<Coordinates> GetCoordinatesForScenarioMap()
         {
             List<Coordinates> MapCoords = new List<Coordinates>();
@@ -19,11 +19,11 @@ namespace PrimeWarEngine.Domain.Components.Map
             }
             //top Right corner
             List<Coordinates> topRight = new List<Coordinates>();
-            for(int r=-6; r<0; r++)
+            for (int r = -6; r < 0; r++)
             {
-                for(int q = 1; q<13; q++)
+                for (int q = 1; q < 13; q++)
                 {
-                    if(q/2 >= Math.Abs(r))
+                    if (q / 2 >= Math.Abs(r))
                     {
                         topRight.Add(new Coordinates(q, r));
                     }
@@ -41,9 +41,9 @@ namespace PrimeWarEngine.Domain.Components.Map
             var totalCoords = GetCoordinatesForScenarioMap();
             var rand = new Random();
             var randCoords = new List<Coordinates>();
-            for(int i =0; i < Math.Min(count, totalCoords.Count); i ++)
+            for (int i = 0; i < Math.Min(count, totalCoords.Count); i++)
             {
-                var coord =totalCoords[rand.Next(0, totalCoords.Count)];
+                var coord = totalCoords[rand.Next(0, totalCoords.Count)];
                 totalCoords.Remove(coord);
                 randCoords.Add(coord);
             }
@@ -56,6 +56,12 @@ namespace PrimeWarEngine.Domain.Components.Map
 
         public static Coordinates[] relativeAdjacents = {new Coordinates(1, 0), new Coordinates(1, -1), new Coordinates(0, -1),
                                                         new Coordinates(-1, 0), new Coordinates(-1, 1), new Coordinates(0, 1) };
+        public static string[] relativeAdjacentsReadable = {"Southeast",
+        "Northeast",
+        "North",
+        "Northwest",
+        "Southwest",
+        "South"};
 
         public static List<Coordinates> RotateCoordinates(List<Coordinates> toRotate, bool clockwise, int numberOfTimes, Coordinates aboutPoint = default(Coordinates))
         {
@@ -154,6 +160,17 @@ namespace PrimeWarEngine.Domain.Components.Map
             return totalCoordinates;
         }
 
+        public static List<Coordinates> GetRandomPath(int length)
+        {
+            List<Coordinates> path = new List<Coordinates>();
+            Random random = new Random();
+            for(int i = 0; i <length; i++)
+            {
+                path.Add(relativeAdjacents[random.Next(6)]);
+            }
+            return path;
+        }
+
         static Coordinates ScaleCoordinateBy(Coordinates coord, int scale)
         {
             return new Coordinates(coord.q * scale, coord.r * scale);
@@ -183,5 +200,14 @@ namespace PrimeWarEngine.Domain.Components.Map
                 Z = _z;
             }
         }
+    }
+    public enum RelativeAdjacentsReadable
+    {
+        Southeast,
+        Northeast,
+        North,
+        Northwest,
+        Southwest,
+        South
     }
 }
