@@ -15,7 +15,13 @@ namespace PrimeWarEngine.Domain.Components.Dice
         public int d12;
 
         public List<DieFaces> guaranteedFaces;
-
+        public DieCode()
+        {
+            this.d4 = 0;
+            this.d8 = 0;
+            this.d12 = 0;
+            this.guaranteedFaces = new List<DieFaces>();
+        }
         public DieCode(int d4, int d8, int d12, List<DieFaces> guranteed = null)
         {
             this.d4 = d4;

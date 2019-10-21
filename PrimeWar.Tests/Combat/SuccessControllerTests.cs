@@ -98,5 +98,41 @@ namespace PrimeWar.Tests.Combat
             Assert.Zero(result.Successes);
         }
 
+        [Test]
+        public void CalculateSuccess_ShouldReturnNoSuccesses_WhenCannotHaveOpportunity()
+        {
+            SuccessController successController = new SuccessController(allOpportunity, adjacentAlly, new Hex(Coordinates.origin, FeatureType.HighGround), false, false, false,true);
+            var result = successController.CalculateSuccess();
+            Assert.Zero(result.Successes);
+            Assert.Zero(result.VitalSuccesses);
+        }
+
+        [Test]
+        public void CalculateSuccess_ShouldReturnNoSuccesses_WhenCannotHaveSupport()
+        {
+            SuccessController successController = new SuccessController(allSupport, adjacentAlly, new Hex(),false,false,true);
+            var result = successController.CalculateSuccess();
+            Assert.Zero(result.Successes);
+            Assert.Zero(result.VitalSuccesses);
+        }
+        [Test]
+        public void CalculateSuccess_ShouldReturnSuccesses_WhenAllFacesAreOpportunityAndOverrideHasOpportunity()
+        {
+            SuccessController successController = new SuccessController(allOpportunity, adjacentAlly, new Hex(), false, true);
+            var result = successController.CalculateSuccess();
+            Assert.AreEqual(3, result.Successes);
+            Assert.Zero(result.VitalSuccesses);
+        }
+
+        [Test]
+        public void CalculateSuccess_ShouldReturnSuccesses_WhenAllFacesAreSupportAndOverrideHasSupport()
+        {
+            SuccessController successController = new SuccessController(allSupport, new List<TargetController>(), new Hex(),true);
+            var result = successController.CalculateSuccess();
+            Assert.AreEqual(3, result.Successes);
+            Assert.Zero(result.VitalSuccesses);
+        }
+
+
     }
 }

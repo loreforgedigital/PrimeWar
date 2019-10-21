@@ -62,6 +62,8 @@
     <Compile Include="Domain\Controllers\Attack.cs" />
     <Compile Include="Domain\Controllers\DieRoller.cs" />
     <Compile Include="Domain\Controllers\GameManager.cs" />
+    <Compile Include="Domain\Controllers\MovementController.cs" />
+    <Compile Include="Domain\Controllers\ResolutionManager.cs" />
     <Compile Include="Domain\Controllers\SuccessController.cs" />
     <Compile Include="Domain\Controllers\SuccessResult.cs" />
     <Compile Include="Domain\Controllers\Target.cs" />
